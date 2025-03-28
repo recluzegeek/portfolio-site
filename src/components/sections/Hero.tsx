@@ -33,9 +33,12 @@ const Hero = () => {
           </div>
           
           <div className="w-full md:w-2/5 animate-fade-in-delayed flex justify-center">
-            <div className="relative rounded-full w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center overflow-hidden">
-              {/* This is where a photo could go */}
-              <div className="text-4xl font-heading font-bold">MS</div>
+            <div className="relative rounded-full w-64 h-64 md:w-80 md:h-80 overflow-hidden border-4 border-primary/20">
+              <img 
+                src="https://media.licdn.com/dms/image/v2/D4E03AQH85pHhjnZoig/profile-displayphoto-shrink_800_800/B4EZVMWiFjG0Ak-/0/1740742731116?e=1750291200&v=beta&t=bFrpnxtTzFM8zIHSQiHXAEtqjrdTUptHDYCOz4eowWE"
+                alt="Muhammad Salman" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

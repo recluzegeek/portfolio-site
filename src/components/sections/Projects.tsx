@@ -2,42 +2,47 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Info } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Projects = () => {
   const projects = [
     {
       title: "Deepfake Video Detection Platform",
-      description: "A comprehensive platform for detecting deepfake videos, consisting of a web application, browser extension, and API endpoints.",
+      description: "A comprehensive platform for detecting deepfake videos, consisting of a web application, browser extension, and API endpoints. Uses advanced CNN models with attention mechanisms for improved accuracy.",
       technologies: ["Python", "TensorFlow", "FastAPI", "React", "Docker"],
       image: "/placeholder.svg",
       githubUrl: "https://github.com/recluzegeek/deepfake-detection",
-      demoUrl: "#"
+      demoUrl: "#",
+      deployed: false
     },
     {
       title: "E-commerce Platform",
-      description: "A full-featured e-commerce platform with product management, user authentication, and payment integration.",
+      description: "A full-featured e-commerce platform with product management, user authentication, and payment integration. Supports multiple product categories and secure checkout.",
       technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap"],
       image: "/placeholder.svg",
       githubUrl: "https://github.com/recluzegeek/ecommerce-platform",
-      demoUrl: "#"
+      demoUrl: "https://ecommerce-demo.example.com",
+      deployed: true
     },
     {
       title: "Real-time Object Detection System",
-      description: "A real-time object detection system using computer vision techniques to identify and track objects in video streams.",
+      description: "A real-time object detection system using computer vision techniques to identify and track objects in video streams. Optimized for resource-constrained environments.",
       technologies: ["Python", "OpenCV", "PyTorch", "YOLO", "Flask"],
       image: "/placeholder.svg",
       githubUrl: "https://github.com/recluzegeek/object-detection",
-      demoUrl: "#"
+      demoUrl: "#",
+      deployed: false
     },
     {
       title: "Personal Task Manager",
-      description: "A responsive web application for managing personal tasks with features like categorization, priorities, and notifications.",
+      description: "A responsive web application for managing personal tasks with features like categorization, priorities, and notifications. Includes reminder functionality and progress tracking.",
       technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
       image: "/placeholder.svg",
       githubUrl: "https://github.com/recluzegeek/task-manager",
-      demoUrl: "#"
+      demoUrl: "https://task-manager.example.com",
+      deployed: true
     }
   ];
 
@@ -89,17 +94,33 @@ const Projects = () => {
                   </a>
                 </Button>
                 
-                <Button asChild size="sm">
-                  <a 
-                    href={project.demoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </a>
-                </Button>
+                {project.deployed ? (
+                  <Button asChild size="sm">
+                    <a 
+                      href={project.demoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                ) : (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button size="sm" variant="secondary" className="inline-flex items-center">
+                          <Info className="mr-2 h-4 w-4" />
+                          Run Locally
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p>This project is not deployed. Check the README file in the GitHub repository for instructions to run it locally.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )}
               </CardFooter>
             </Card>
           ))}

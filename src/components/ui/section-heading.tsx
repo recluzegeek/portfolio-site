@@ -26,16 +26,16 @@ export function SectionHeading({
         <span className="relative z-10">
           {title}
           <span className={cn(
-            "absolute -bottom-1 h-1 bg-primary",
-            centered ? "left-1/4 right-1/4" : "left-0 w-16"
+            "absolute -bottom-1 h-1.5 bg-primary/80",
+            centered ? "left-1/4 right-1/4" : "left-0 w-20"
           )}></span>
         </span>
       </h2>
       
       {description && (
         <p className={cn(
-          "text-muted-foreground",
-          centered && "max-w-xl mx-auto"
+          "text-muted-foreground text-lg mt-4",
+          centered && "max-w-2xl mx-auto"
         )}>
           {description}
         </p>
