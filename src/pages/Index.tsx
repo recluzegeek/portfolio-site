@@ -44,36 +44,6 @@ const Index = () => {
     };
   }, []);
   
-  // Add scroll animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('motion-safe:animate-running');
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
-      }
-    );
-    
-    // Target all elements with animation classes
-    const animatedElements = document.querySelectorAll('[class*="animate-"]');
-    animatedElements.forEach((element) => {
-      observer.observe(element);
-    });
-    
-    return () => {
-      animatedElements.forEach((element) => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
