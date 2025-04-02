@@ -2,8 +2,8 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
-import * as random from 'maath/random.js';
-import { Vector3 } from 'three';
+import * as random from 'maath/random';
+import * as THREE from 'three';
 
 const NeuralNetwork = () => {
   const ref = useRef<THREE.Points>(null);
@@ -11,7 +11,7 @@ const NeuralNetwork = () => {
 
   const positions = React.useMemo(() => {
     const pos = new Float32Array(sphereCount * 3);
-    random.inSphere(pos as any, { radius: 1.5 });
+    random.inSphere(pos, { radius: 1.5 });
     return pos;
   }, [sphereCount]);
 
@@ -46,4 +46,3 @@ const NeuralNetworkBackground: React.FC = () => {
 };
 
 export default NeuralNetworkBackground;
-
