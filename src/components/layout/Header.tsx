@@ -37,7 +37,7 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/90 backdrop-blur-md shadow-sm py-3' 
+          ? 'bg-background/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -52,7 +52,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors dark:text-slate-200"
             >
               {item.name}
             </a>
@@ -62,6 +62,7 @@ const Header = () => {
             size="icon"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle theme"
+            className="dark:text-slate-200"
           >
             {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
           </Button>
@@ -74,6 +75,7 @@ const Header = () => {
             size="icon"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle theme"
+            className="dark:text-slate-200"
           >
             {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
           </Button>
@@ -82,6 +84,7 @@ const Header = () => {
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
+            className="dark:text-slate-200"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -90,13 +93,13 @@ const Header = () => {
       
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md shadow-md">
+        <div className="md:hidden bg-background/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md">
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium block py-2 hover:text-primary transition-colors"
+                className="text-sm font-medium block py-2 hover:text-primary transition-colors dark:text-slate-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
