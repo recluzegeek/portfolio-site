@@ -9,39 +9,67 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 const Projects = () => {
   const projects = [
     {
-      title: "Deepfake Video Detection Platform",
-      description: "A comprehensive platform for detecting deepfake videos, consisting of a web application, browser extension, and API endpoints. Uses advanced CNN models with attention mechanisms for improved accuracy.",
-      technologies: ["Python", "TensorFlow", "FastAPI", "React", "Docker"],
+      title: "DeepScan Web",
+      description: "A comprehensive web application built with Laravel that leverages deep learning algorithms to analyze and detect potential deepfake video content, providing robust authentication and user management features.",
+      technologies: ["Laravel", "PHP", "Deep Learning", "MySQL", "Bootstrap"],
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/deepfake-detection",
-      demoUrl: "#",
+      githubUrl: "https://github.com/recluzegeek/deepscan-web",
       deployed: false
     },
     {
-      title: "E-commerce Platform",
-      description: "A full-featured e-commerce platform with product management, user authentication, and payment integration. Supports multiple product categories and secure checkout.",
-      technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap"],
+      title: "DeepScan API",
+      description: "A high-performance FastAPI-based inference API powering the DeepScan Platform ecosystem, handling real-time video analysis and deepfake detection requests from both web and browser extension clients.",
+      technologies: ["Python", "FastAPI", "Machine Learning", "Docker", "REST API"],
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/ecommerce-platform",
-      demoUrl: "https://ecommerce-demo.example.com",
+      githubUrl: "https://github.com/recluzegeek/deepscan-api",
       deployed: true
     },
     {
-      title: "Real-time Object Detection System",
-      description: "A real-time object detection system using computer vision techniques to identify and track objects in video streams. Optimized for resource-constrained environments.",
-      technologies: ["Python", "OpenCV", "PyTorch", "YOLO", "Flask"],
+      title: "JKeyLogger",
+      description: "An educational Java application implementing advanced data structures to capture and analyze keyboard inputs using JNativeHook, demonstrating practical applications of DSA concepts.",
+      technologies: ["Java", "JNativeHook", "Data Structures", "OOP"],
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/object-detection",
-      demoUrl: "#",
+      githubUrl: "https://github.com/recluzegeek/JKeylogger",
       deployed: false
     },
     {
-      title: "Personal Task Manager",
-      description: "A responsive web application for managing personal tasks with features like categorization, priorities, and notifications. Includes reminder functionality and progress tracking.",
-      technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
+      title: "Airline Reservation System",
+      description: "A comprehensive Java-based flight booking system showcasing advanced OOP principles through features like user management, flight scheduling, and booking operations.",
+      technologies: ["Java", "OOP", "JDBC", "MySQL"],
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/task-manager",
-      demoUrl: "https://task-manager.example.com",
+      githubUrl: "https://github.com/recluzegeek/AirLineReservationSystem",
+      deployed: false
+    },
+    {
+      title: "Black Ash Food Ordering",
+      description: "A modern web-based restaurant management system offering seamless food ordering, real-time order tracking, and comprehensive admin controls for menu and order management.",
+      technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      image: "/placeholder.svg",
+      githubUrl: "https://github.com/recluzegeek/BlackAshFoodOrederingSystem",
+      deployed: true
+    },
+    {
+      title: "Smart VPN Proxy",
+      description: "A streamlined platform for hosting and managing OpenVPN configuration files, simplifying the process of VPN deployment and configuration distribution.",
+      technologies: ["Networking", "OpenVPN", "Web Development"],
+      image: "/placeholder.svg",
+      githubUrl: "https://github.com/recluzegeek/smart-vpn-proxy",
+      deployed: true
+    },
+    {
+      title: "MiniMax Python GUI",
+      description: "An interactive visualization tool for the MiniMax algorithm with Alpha-Beta pruning, providing insights into AI decision-making processes through a graphical interface.",
+      technologies: ["Python", "AI", "GUI", "Algorithms"],
+      image: "/placeholder.svg",
+      githubUrl: "https://github.com/recluzegeek/MiniMaxPythonGUI",
+      deployed: false
+    },
+    {
+      title: "DeepScan Extension",
+      description: "A browser extension component of the DeepScan ecosystem, enabling users to analyze videos for potential deepfake content directly from their web browser.",
+      technologies: ["JavaScript", "Browser Extension", "API Integration"],
+      image: "/placeholder.svg",
+      githubUrl: "https://github.com/recluzegeek/deepscan-extension",
       deployed: true
     }
   ];
@@ -51,7 +79,7 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="My Projects" 
-          description="Here are some of my key projects that showcase my skills and expertise in software development, computer vision, and machine learning."
+          description="A showcase of my technical expertise across various domains including AI, web development, and system design."
           centered={true}
         />
         
@@ -67,12 +95,14 @@ const Projects = () => {
               </div>
               
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">
+                  {project.description}
+                </CardDescription>
               </CardHeader>
               
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="secondary" className="font-medium">
                       {tech}
@@ -82,7 +112,7 @@ const Projects = () => {
               </CardContent>
               
               <CardFooter className="flex justify-between">
-                <Button asChild variant="outline" size="sm">
+                <Button asChild variant="outline" size="sm" className="bg-sky-400/10 hover:bg-sky-400/20 text-sky-500">
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
@@ -90,14 +120,14 @@ const Projects = () => {
                     className="inline-flex items-center"
                   >
                     <Github className="mr-2 h-4 w-4" />
-                    Code
+                    View Code
                   </a>
                 </Button>
                 
                 {project.deployed ? (
-                  <Button asChild size="sm">
+                  <Button asChild size="sm" className="bg-sky-400 hover:bg-sky-500 text-white">
                     <a 
-                      href={project.demoUrl} 
+                      href={project.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
@@ -116,7 +146,7 @@ const Projects = () => {
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
-                        <p>This project is not deployed. Check the README file in the GitHub repository for instructions to run it locally.</p>
+                        <p>This project needs to be run locally. Check the README file in the GitHub repository for setup instructions.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -127,7 +157,7 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-10">
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="bg-sky-400 hover:bg-sky-500 text-white">
             <a 
               href="https://github.com/recluzegeek" 
               target="_blank" 
