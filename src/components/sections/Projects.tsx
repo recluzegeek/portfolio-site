@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,17 +9,17 @@ const Projects = () => {
   const projects = [
     {
       title: "DeepScan Web",
-      description: "A comprehensive web application built with Laravel that leverages deep learning algorithms to analyze and detect potential deepfake video content, providing robust authentication and user management features.",
+      description: "A comprehensive web application leveraging deep learning algorithms to detect potential deepfake video content, providing robust authentication and user management features.",
       technologies: ["Laravel", "PHP", "Deep Learning", "MySQL", "Bootstrap"],
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1633419461186-7d41ca960f82?q=80&w=800&auto=format&fit=crop",
       githubUrl: "https://github.com/recluzegeek/deepscan-web",
       deployed: false
     },
     {
       title: "DeepScan API",
-      description: "A high-performance FastAPI-based inference API powering the DeepScan Platform ecosystem, handling real-time video analysis and deepfake detection requests from both web and browser extension clients.",
+      description: "High-performance FastAPI-based inference API powering the DeepScan Platform ecosystem, handling real-time video analysis and deepfake detection requests.",
       technologies: ["Python", "FastAPI", "Machine Learning", "Docker", "REST API"],
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
       githubUrl: "https://github.com/recluzegeek/deepscan-api",
       deployed: true
     },
@@ -75,7 +74,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900/50">
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="My Projects" 
@@ -85,7 +84,11 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="hover-lift overflow-hidden border border-border/50 animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card 
+              key={index} 
+              className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 animate-fade-up" 
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <div className="h-48 bg-muted flex items-center justify-center overflow-hidden">
                 <img 
                   src={project.image} 

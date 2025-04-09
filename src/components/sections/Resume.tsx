@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Briefcase, GraduationCap, Award } from "lucide-react";
@@ -7,42 +6,37 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const Resume = () => {
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      institution: "University Example",
-      location: "City, Country",
-      period: "2021 - 2023",
-      description: "Specialized in Artificial Intelligence and Computer Vision. Research focus on deepfake detection and machine learning algorithms."
-    },
-    {
       degree: "Bachelor of Science in Software Engineering",
-      institution: "University Example",
-      location: "City, Country",
-      period: "2017 - 2021",
-      description: "Graduated with honors. Final project: Development of an automated system for image classification using CNNs."
+      institution: "GIFT University",
+      location: "Gujranwala, Pakistan",
+      period: "2019 - 2023",
+      description: "Graduated with Gold Medal and 3.85 CGPA. Focused on software engineering principles, algorithms, and artificial intelligence."
     }
   ];
 
   const experience = [
     {
-      position: "Software Engineering Intern",
-      company: "Tech Company Example",
-      location: "City, Country",
-      period: "Summer 2022",
-      description: "Developed and implemented computer vision algorithms for product detection and classification. Worked with Python, OpenCV, and TensorFlow."
+      position: "Jr. Software Developer",
+      company: "Cedar Technologies",
+      location: "On Site",
+      period: "January 2024 - August 2024",
+      description: [
+        "Designed and developed a desktop application for employee monitoring using Electron and Python, improving workflow tracking by 35%.",
+        "Built and deployed a web application integrated with the desktop monitoring tool, supporting 200+ concurrent users.",
+        "Created API endpoints to integrate the desktop and web platforms, enabling seamless secure communication.",
+        "Implemented token-based authentication shielding 12 critical API endpoints, mitigating potential breaches by 60%.",
+        "Set up and configured GitHub Actions to automate CI/CD pipelines, reducing deployment time by 80%.",
+        "Conducted code reviews, ensuring best practices were followed, resulting in a 15% improvement in overall code efficiency."
+      ]
     },
     {
-      position: "Research Assistant",
-      company: "AI Research Lab",
-      location: "University Example",
-      period: "2021 - 2023",
-      description: "Conducted research on computer vision applications in medical imaging. Developed and tested deep learning models for image segmentation and classification."
-    },
-    {
-      position: "Web Developer",
-      company: "Web Solutions Example",
+      position: "Technical Research Writer",
+      company: "Freelance",
       location: "Remote",
-      period: "2019 - 2021",
-      description: "Designed and developed responsive web applications using modern front-end frameworks and back-end technologies."
+      period: "December 2021 - February 2022",
+      description: [
+        "Researched and wrote several articles on emerging technology trends, with a particular focus on the decentralization movement and Web3 technology."
+      ]
     }
   ];
 
@@ -126,7 +120,15 @@ const Resume = () => {
                         {item.period}
                       </span>
                     </div>
-                    <p className="text-sm">{item.description}</p>
+                    {Array.isArray(item.description) ? (
+                      <ul className="list-disc list-inside space-y-2 text-sm">
+                        {item.description.map((bullet, idx) => (
+                          <li key={idx}>{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm">{item.description}</p>
+                    )}
                   </CardContent>
                 </Card>
               ))}
