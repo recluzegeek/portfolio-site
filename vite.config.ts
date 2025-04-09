@@ -32,4 +32,16 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
+  build: {
+    // Fix permission issues with esbuild in some environments
+    target: 'es2015',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ['three'],
+          react: ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
+    },
+  },
 }));
