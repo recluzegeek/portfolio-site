@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Info } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useQuery } from "@tanstack/react-query";
+import { fetchOgImage } from "@/utils/fetchOgImage";
 
 const Projects = () => {
   const projects = [
@@ -73,8 +75,17 @@ const Projects = () => {
     }
   ];
 
+  // Fetch OG images for each project
+  const ogImageQueries = projects.map(project => ({
+    queryKey: ['ogImage', project.githubUrl],
+    queryFn: () => fetchOgImage(project.githubUrl),
+    staleTime: Infinity
+  }));
+
+  const ogImageResults = ogImageQueries.map(query => useQuery(query));
+
   return (
-    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900/50">
+    <section id="projects" className="py-20 bg-slate-50/50 dark:bg-slate-900/30">
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="My Projects" 
@@ -89,11 +100,15 @@ const Projects = () => {
               className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 animate-fade-up" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="h-48 bg-muted flex items-center justify-center overflow-hidden">
+              <div className="relative h-48 bg-muted flex items-center justify-center overflow-hidden">
                 <img 
-                  src={project.image} 
-                  alt={project.title} 
+                  src={ogImageResults[index].data || '/placeholder.svg'} 
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.src = '/placeholder.svg';
+                  }}
                 />
               </div>
               
