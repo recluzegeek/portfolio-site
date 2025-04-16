@@ -7,13 +7,13 @@ interface SkillBadgeProps {
 }
 
 export function SkillBadge({ name, className }: SkillBadgeProps) {
-  const baseClasses = "inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-300";
-  
   return (
     <div 
       className={cn(
-        baseClasses,
-        "bg-card text-card-foreground border border-border/50 hover:border-primary hover:bg-accent/80 hover:scale-105 shadow-sm",
+        "inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-300",
+        "bg-card text-card-foreground border-2 border-primary/20 dark:border-primary/30",
+        "hover:border-primary hover:bg-accent/80 hover:scale-105",
+        "shadow-sm dark:shadow-primary/5",
         className
       )}
     >

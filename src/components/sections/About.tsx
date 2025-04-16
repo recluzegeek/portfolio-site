@@ -36,23 +36,38 @@ const About = () => {
             
             <div className="space-y-4 text-base">
               <p>
-                I'm a dedicated Software Engineer with a strong focus on Computer Vision, AI, and Machine Learning. 
-                My journey in technology is driven by a passion for solving complex problems and creating innovative solutions 
-                that bridge the gap between theoretical concepts and practical applications.
+                Hi, I'm Muhammad Salman, a Software Engineer with a background in Computer Science, 
+                passionate about software development and computer vision. I love working on projects 
+                that challenge me and allow me to build scalable, efficient systems. Throughout my 
+                academic journey, I've had the opportunity to dive deep into programming, and I'm 
+                excited to apply my knowledge to real-world problems.
               </p>
               <p>
-                Having specialized in computer vision, I've developed a keen interest in creating systems that can interpret 
-                and analyze visual data with human-like precision. My work ranges from developing web applications to 
-                implementing sophisticated algorithms for image and video processing.
+                I enjoy tackling challenges that allow me to grow and contribute to meaningful projects. 
+                I've worked on a range of projects, from web apps to deepfake video detection systems, 
+                and I'm always looking for ways to improve and learn new technologies. I thrive in 
+                environments that encourage creativity and collaboration, and I'm eager to contribute 
+                to innovative teams that make a difference.
               </p>
               <p>
-                I believe in the power of continuous learning and staying abreast of the latest technological advancements. 
-                This approach has helped me build versatile skills across multiple domains of software engineering and AI.
+                In addition to my hands-on work, I've authored several research papers in the field 
+                of computer vision, and they are currently in the publication pipeline. These experiences 
+                have further sharpened my analytical skills and deepened my understanding of AI and 
+                machine learning.
+              </p>
+              <p>
+                When I'm not coding, I enjoy exploring the latest in cloud computing, automation, and AI. 
+                Let's connect – I'd love to chat about tech, innovation, or any new opportunities. 
+                Feel free to check out my portfolio in the Projects section below, or visit me 
+                on github@recluzegeek.
               </p>
             </div>
             
             <div className="mt-8">
-              <Button asChild variant="outline" className="hover-lift">
+              <Button 
+                asChild 
+                className="bg-sky-500 hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+              >
                 <a href="#resume" className="inline-flex items-center">
                   <Link className="mr-2 h-4 w-4" />
                   View My Resume
