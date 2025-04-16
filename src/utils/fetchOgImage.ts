@@ -1,4 +1,3 @@
-
 export async function fetchOgImage(url: string): Promise<string> {
   if (!url) return '/placeholder.svg';
   
@@ -9,8 +8,8 @@ export async function fetchOgImage(url: string): Promise<string> {
     
     const [, username, repo] = match;
     
-    // Try to get the social preview image from GitHub
-    const ogImage = `https://opengraph.githubassets.com/v1/${username}/${repo}`;
+    // Try to get the social preview image from GitHub with v5
+    const ogImage = `https://opengraph.githubassets.com/v5/${username}/${repo}`;
     
     // Fallback images based on project type or using tech-appropriate images
     const fallbackImages: Record<string, string> = {
