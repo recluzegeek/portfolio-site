@@ -101,7 +101,7 @@ const Projects = () => {
               className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 animate-fade-up shadow-md" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 bg-muted flex items-center justify-center overflow-hidden">
+              <div className="relative aspect-video bg-muted flex items-center justify-center overflow-hidden">
                 <img 
                   src={ogImageResults[index].data || project.image} 
                   alt={project.title}

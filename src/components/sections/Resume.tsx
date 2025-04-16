@@ -82,7 +82,11 @@ const Resume = () => {
             
             <div className="space-y-8">
               {education.map((item, index) => (
-                <Card key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card 
+                  key={index} 
+                  className="animate-fade-up bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                       <div>
