@@ -30,7 +30,7 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://linkedin.com/recluzegeek" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -39,7 +39,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:contact@example.com" 
+                href="mailto:recluzegeek@gmail.com" 
                 className="hover:text-primary transition-colors"
                 aria-label="Email"
               >

@@ -30,10 +30,10 @@ const Hero = () => {
               software engineering, artificial intelligence, and computer vision.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg" variant="default">
+                <Button asChild size="lg" variant="default" className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white">
                 <a href="#contact">Let's Connect</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">
+              <Button asChild variant="outline" size="lg" className="bg-card text-card-foreground border-2 border-primary/20 dark:border-primary/30 hover:border-primary/20 hover:bg-accent/80 shadow-sm dark:shadow-primary/">
                 <a href="#projects">View My Work</a>
               </Button>
             </div>

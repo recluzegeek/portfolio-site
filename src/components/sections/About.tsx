@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "lucide-react";
+import { Link, Section } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SkillBadge } from "@/components/ui/skill-badge";
 
@@ -8,19 +8,19 @@ const About = () => {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["Python", "JavaScript", "PHP", "C++", "SQL"]
+      items: ["Python", "Java", "JavaScript", "PHP", "C++", "SQL"]
     },
     {
       category: "Frameworks",
-      items: ["Laravel", "FastAPI", "Vue.js", "React", "TensorFlow", "PyTorch"]
+      items: ["Laravel", "FastAPI", "Vue.js", "React", "PyTorch"]
     },
     {
-      category: "Technologies",
-      items: ["Machine Learning", "Computer Vision", "Cloud Computing", "Docker", "API Development"]
+      category: "Fields",
+      items: ["ML & DL", "Computer Vision", "Cloud Computing", "API Development"]
     },
     {
       category: "Tools",
-      items: ["Git", "GitHub", "VSCode", "Jupyter Notebook", "Linux"]
+      items: ["Git", "GitHub", "Vagrant", "Docker" ,"Linux"]
     }
   ];
 
@@ -35,39 +35,13 @@ const About = () => {
             />
             
             <div className="space-y-4 text-base">
-              <p>
-                Hi, I'm Muhammad Salman, a Software Engineer with a background in Computer Science, 
-                passionate about software development and computer vision. I love working on projects 
-                that challenge me and allow me to build scalable, efficient systems. Throughout my 
-                academic journey, I've had the opportunity to dive deep into programming, and I'm 
-                excited to apply my knowledge to real-world problems.
-              </p>
-              <p>
-                I enjoy tackling challenges that allow me to grow and contribute to meaningful projects. 
-                I've worked on a range of projects, from web apps to deepfake video detection systems, 
-                and I'm always looking for ways to improve and learn new technologies. I thrive in 
-                environments that encourage creativity and collaboration, and I'm eager to contribute 
-                to innovative teams that make a difference.
-              </p>
-              <p>
-                In addition to my hands-on work, I've authored several research papers in the field 
-                of computer vision, and they are currently in the publication pipeline. These experiences 
-                have further sharpened my analytical skills and deepened my understanding of AI and 
-                machine learning.
-              </p>
-              <p>
-                When I'm not coding, I enjoy exploring the latest in cloud computing, automation, and AI. 
-                Let's connect – I'd love to chat about tech, innovation, or any new opportunities. 
-                Feel free to check out my portfolio in the Projects section below, or visit me 
-                on github@recluzegeek.
-              </p>
+              <p>I’m a Software Engineer with a Computer Science background, passionate about software development and computer vision. I love tackling challenging projects that allow me to build scalable systems and apply my programming knowledge to real-world problems. My experience spans from web apps to deepfake detection, and I’m always eager to learn and grow in new technologies.</p>
+              
+              <p>In addition to my hands-on work, I’ve authored several research papers in computer vision, deepening my understanding of AI and machine learning. Outside of coding, I explore cloud computing, automation, and AI. Let’s connect – I’d love to discuss tech and innovation!</p>
             </div>
             
             <div className="mt-8">
-              <Button 
-                asChild 
-                className="bg-sky-500 hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
-              >
+            <Button asChild size="lg" variant="default" className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white">
                 <a href="#resume" className="inline-flex items-center">
                   <Link className="mr-2 h-4 w-4" />
                   View My Resume

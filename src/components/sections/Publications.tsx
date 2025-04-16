@@ -8,28 +8,28 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 const Publications = () => {
   const publications = [
     {
-      title: "Enhancing Deepfake Detection: A Novel Approach Using Convolutional Neural Networks",
-      venue: "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      date: "June 2023",
-      abstract: "This paper presents a novel approach to deepfake detection using convolutional neural networks combined with attention mechanisms. We demonstrate improved accuracy in identifying manipulated videos across diverse datasets, achieving a 97.3% detection rate on benchmark datasets while reducing false positives by 15% compared to state-of-the-art methods.",
-      link: "https://example.com/deepfake-detection-paper",
-      status: "Published"
+      title: "AWARE-NET: Adaptive Weighted Average for Robust Ensemble Network in Deepfake Detection",
+      venue: "International Conference on Energy, Power, Environment, Control and Computing (ICEPECC 2025)",
+      date: "Feb 2025",
+      abstract: "This paper introduces a hierarchical approach to deepfake detection, combining multiple instances of three CNN models (Xception, Res2Net101, EfficientNet-B7) with a learnable weighting mechanism to dynamically merge their predictions. The method enhances detection accuracy across diverse datasets, achieving a 99.22% AUC on FF++ and 100.00% AUC on CelebDF-v2, while reducing false positives by 15% compared to state-of-the-art methods.",
+      link: "https://www.researchgate.net/publication/389171866_AWARE-NET_Adaptive_Weighted_Averaging_for_Robust_Ensemble_Network_in_Deepfake_Detection",
+      status: "Waiting for Proceedings to Publish"
     },
     {
-      title: "Real-time Object Recognition in Resource-Constrained Environments",
-      venue: "International Journal of Computer Vision",
-      date: "October 2023",
-      abstract: "We propose an efficient object recognition system designed to work in resource-constrained environments such as mobile devices and IoT platforms. Our approach achieves comparable accuracy to state-of-the-art models while requiring 60% less computational power and 40% less memory, enabling robust real-time performance on edge devices.",
-      link: "https://example.com/object-recognition-paper",
-      status: "Published"
-    },
-    {
-      title: "A Comparative Analysis of Transfer Learning Techniques for Medical Image Classification",
-      venue: "Medical Image Analysis",
-      date: "Expected March 2024",
-      abstract: "This study evaluates various transfer learning approaches applied to medical image classification tasks. We analyze performance across different medical imaging modalities including X-rays, MRIs, and CT scans, and propose optimization strategies that improve diagnostic accuracy by up to 12% while reducing annotation requirements by 35%.",
+      title: "Analyzing Frequency Domain Features and Machine Learning Approaches for Deepfake Detection",
+      venue: "IEEE Access",
+      date: "April 2025",
+      abstract: "This study investigates the use of machine learning classifiers with mathematical transformations as frequency-domain feature extractors for efficient deepfake detection. Unlike traditional computationally intensive methods, our approach leverages Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), and Wavelet Transform (both individually and in combinations) as feature extractors. These features are processed with machine learning classifiers, enabling quicker and more scalable detection without the heavy computational cost of traditional methods, leading to both speed and increased generalization, making it a promising solution for real-time, large-scale deepfake detection.",
       link: null,
       status: "Under Review"
+    },
+    {
+      title: "Convolutional Neural Networks and Transformer-Based Deepfake Detection: A Comparative Analysis",
+      venue: "Not Yet Decided",
+      date: "Expected July 2025",
+      abstract: "This study evaluates various transfer learning approaches applied to medical image classification tasks. We analyze performance across different medical imaging modalities including X-rays, MRIs, and CT scans, and propose optimization strategies that improve diagnostic accuracy by up to 12% while reducing annotation requirements by 35%.",
+      link: null,
+      status: "Final Stages"
     }
   ];
 
@@ -98,9 +98,9 @@ const Publications = () => {
         </div>
         
         <div className="text-center mt-10">
-          <Button asChild variant="outline">
+        <Button asChild variant="outline" size="lg" className="bg-card text-card-foreground border-2 border-primary/20 dark:border-primary/30 hover:border-primary/20 hover:bg-accent/80 shadow-sm dark:shadow-primary/">
             <a 
-              href="https://scholar.google.com" 
+              href="https://scholar.google.com/citations?user=_-ClV0AAAAAJ" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center"

@@ -44,14 +44,14 @@ const Resume = () => {
     {
       title: "Deep Learning Specialization",
       issuer: "Coursera",
-      date: "2022",
+      date: "2024",
       description: "Comprehensive program covering neural networks, improving deep neural networks, structuring machine learning projects, CNNs, and sequence models."
     },
     {
-      title: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "2021",
-      description: "Professional certification demonstrating proficiency in using TensorFlow to solve deep learning and ML problems."
+      title: "Linux Foundation Certified System Administrator (LFCS)",
+      issuer: "Linux Foundation",
+      date: "2023",
+      description: "Professional certification demonstrating proficiency in administering Linux servers, covering system installation, user management, networking, and security to ensure efficient and secure Linux-based environments."
     }
   ];
 
@@ -77,7 +77,7 @@ const Resume = () => {
           <div>
             <div className="flex items-center mb-8">
               <GraduationCap className="h-6 w-6 mr-3 text-primary" />
-              <h3 className="text-2xl font-heading font-bold">Education</h3>
+               <h3 className="text-2xl font-heading font-bold">Education</h3>
             </div>
             
             <div className="space-y-8">

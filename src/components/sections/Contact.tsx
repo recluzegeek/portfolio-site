@@ -30,8 +30,8 @@ const ContactInfo = () => (
           </div>
           <div>
             <p className="text-sm font-medium">Email</p>
-            <a href="mailto:contact@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              contact@example.com
+            <a href="mailto:recluzegeek@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              recluzegeek@gmail.com
             </a>
           </div>
         </CardContent>
@@ -64,12 +64,12 @@ const ContactInfo = () => (
           <div>
             <p className="text-sm font-medium">LinkedIn</p>
             <a 
-              href="https://linkedin.com/" 
+              href="https://linkedin.com/recluzegeek" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              linkedin.com/in/muhammad-salman
+              linkedin.com/in/recluzegeek
             </a>
           </div>
         </CardContent>

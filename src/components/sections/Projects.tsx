@@ -10,10 +10,18 @@ import { fetchOgImage } from "@/utils/fetchOgImage";
 const Projects = () => {
   const projects = [
     {
+      title: "Airline Reservation System",
+      description: "A comprehensive Java-based flight booking system showcasing advanced OOP principles through features like user management, flight scheduling, and booking operations.",
+      technologies: ["Java", "OOP"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/AirLineReservationSystem",
+      githubUrl: "https://github.com/recluzegeek/AirLineReservationSystem",
+      deployed: false
+    },
+    {
       title: "DeepScan Web",
       description: "A comprehensive web application leveraging deep learning algorithms to detect potential deepfake video content, providing robust authentication and user management features.",
-      technologies: ["Laravel", "PHP", "Deep Learning", "MySQL", "Bootstrap"],
-      image: "https://images.unsplash.com/photo-1633419461186-7d41ca960f82?q=80&w=800&auto=format&fit=crop",
+      technologies: ["Laravel", "PHP", "Deep Learning", "MariaDB", "Vue.js", "MinIO", "Redis"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/deepscan-web",
       githubUrl: "https://github.com/recluzegeek/deepscan-web",
       deployed: false
     },
@@ -21,57 +29,49 @@ const Projects = () => {
       title: "DeepScan API",
       description: "High-performance FastAPI-based inference API powering the DeepScan Platform ecosystem, handling real-time video analysis and deepfake detection requests.",
       technologies: ["Python", "FastAPI", "Machine Learning", "Docker", "REST API"],
-      image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/deepscan-api",
       githubUrl: "https://github.com/recluzegeek/deepscan-api",
-      deployed: true
-    },
-    {
-      title: "JKeyLogger",
-      description: "An educational Java application implementing advanced data structures to capture and analyze keyboard inputs using JNativeHook, demonstrating practical applications of DSA concepts.",
-      technologies: ["Java", "JNativeHook", "Data Structures", "OOP"],
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/JKeylogger",
-      deployed: false
-    },
-    {
-      title: "Airline Reservation System",
-      description: "A comprehensive Java-based flight booking system showcasing advanced OOP principles through features like user management, flight scheduling, and booking operations.",
-      technologies: ["Java", "OOP", "JDBC", "MySQL"],
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/AirLineReservationSystem",
-      deployed: false
-    },
-    {
-      title: "Black Ash Food Ordering",
-      description: "A modern web-based restaurant management system offering seamless food ordering, real-time order tracking, and comprehensive admin controls for menu and order management.",
-      technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/BlackAshFoodOrederingSystem",
-      deployed: true
-    },
-    {
-      title: "Smart VPN Proxy",
-      description: "A streamlined platform for hosting and managing OpenVPN configuration files, simplifying the process of VPN deployment and configuration distribution.",
-      technologies: ["Networking", "OpenVPN", "Web Development"],
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/smart-vpn-proxy",
-      deployed: true
-    },
-    {
-      title: "MiniMax Python GUI",
-      description: "An interactive visualization tool for the MiniMax algorithm with Alpha-Beta pruning, providing insights into AI decision-making processes through a graphical interface.",
-      technologies: ["Python", "AI", "GUI", "Algorithms"],
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/recluzegeek/MiniMaxPythonGUI",
       deployed: false
     },
     {
       title: "DeepScan Extension",
       description: "A browser extension component of the DeepScan ecosystem, enabling users to analyze videos for potential deepfake content directly from their web browser.",
       technologies: ["JavaScript", "Browser Extension", "API Integration"],
-      image: "/placeholder.svg",
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/deepscan-extension",
       githubUrl: "https://github.com/recluzegeek/deepscan-extension",
-      deployed: true
+      deployed: false
+    },
+    {
+      title: "MiniMax Python GUI",
+      description: "An interactive visualization tool for the MiniMax algorithm with Alpha-Beta pruning, providing insights into AI decision-making processes through a graphical interface.",
+      technologies: ["Python", "AI", "GUI", "Algorithms"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/MiniMaxPythonGUI",
+      githubUrl: "https://github.com/recluzegeek/MiniMaxPythonGUI",
+      deployed: false
+    },
+    {
+      title: "JKeyLogger",
+      description: "An educational Java application implementing advanced data structures to capture and analyze keyboard inputs using JNativeHook, demonstrating practical applications of DSA concepts.",
+      technologies: ["Java", "JNativeHook", "Data Structures", "OOP"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/JKeyLogger",
+      githubUrl: "https://github.com/recluzegeek/JKeylogger",
+      deployed: false
+    },
+    {
+      title: "Black Ash Food Ordering",
+      description: "A modern web-based restaurant management system offering seamless food ordering, real-time order tracking, and comprehensive admin controls for menu and order management.",
+      technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/BlackAshFoodOrderingSystem",
+      githubUrl: "https://github.com/recluzegeek/BlackAshFoodOrderingSystem",
+      deployed: false
+    },
+    {
+      title: "Smart VPN Proxy",
+      description: "A streamlined platform for hosting and managing OpenVPN configuration files, simplifying the process of VPN deployment and configuration distribution.",
+      technologies: ["Networking", "OpenVPN", "Web Development", "Server Management"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/smart-vpn-proxy",
+      githubUrl: "https://github.com/recluzegeek/smart-vpn-proxy",
+      deployed: false
     }
   ];
 
@@ -100,9 +100,9 @@ const Projects = () => {
               className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 animate-fade-up shadow-md" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-52 bg-muted flex items-center justify-center overflow-hidden">
+              <div className="relative bg-muted flex items-center justify-center overflow-hidden">
                 <img 
-                  src={ogImageResults[index].data || project.image} 
+                  src={ project.image || ogImageResults[index].data} 
                   alt={project.title}
                   className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
@@ -130,7 +130,7 @@ const Projects = () => {
               </CardContent>
               
               <CardFooter className="flex justify-between">
-                <Button asChild variant="outline" size="sm" className="bg-sky-400/10 hover:bg-sky-400/20 text-sky-500">
+                <Button asChild variant="outline" size="sm" className="bg-sky-400/10 hover:bg-sky-400/20 ">
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
@@ -164,7 +164,8 @@ const Projects = () => {
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
-                        <p>This project needs to be run locally. Check the README file in the GitHub repository for setup instructions.</p>
+                        <p>This project needs to be run locally.</p>
+                        <p> Check the README file in the GitHub repository for setup instructions.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -175,8 +176,8 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-10">
-          <Button asChild variant="outline" className="bg-sky-400 hover:bg-sky-500 text-white">
-            <a 
+        <Button asChild size="lg" className="bg-sky-400 hover:bg-sky-500 text-white">
+        <a 
               href="https://github.com/recluzegeek" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -184,6 +185,7 @@ const Projects = () => {
             >
               <Github className="mr-2 h-4 w-4" />
               View More on GitHub
+              <ExternalLink className="mr-2 h-4 w-4" />
             </a>
           </Button>
         </div>
