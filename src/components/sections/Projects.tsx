@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -97,17 +98,17 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 animate-fade-up" 
+              className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 animate-fade-up shadow-md" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-48 bg-muted flex items-center justify-center overflow-hidden">
                 <img 
-                  src={ogImageResults[index].data || '/placeholder.svg'} 
+                  src={ogImageResults[index].data || project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
-                    img.src = '/placeholder.svg';
+                    img.src = project.image || '/placeholder.svg';
                   }}
                 />
               </div>
