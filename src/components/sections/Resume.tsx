@@ -9,7 +9,7 @@ const Resume = () => {
       degree: "Bachelor of Science in Software Engineering",
       institution: "GIFT University",
       location: "Gujranwala, Pakistan",
-      period: "2019 - 2023",
+      period: "2021 - 2025",
       description: "Graduated with Gold Medal and 3.85 CGPA. Focused on software engineering principles, algorithms, and artificial intelligence."
     }
   ];
@@ -65,7 +65,7 @@ const Resume = () => {
         />
         <div className="text-center mb-12">
           <Button asChild className="hover-lift">
-            <a href="#" download className="inline-flex items-center">
+            <a href="lovable-uploads/cc2bd8f09bb88b5dd20f9b432631b8ca.pdf" download className="inline-flex items-center">
               <Download className="mr-2 h-4 w-4" />
               Download Resume (PDF)
             </a>
