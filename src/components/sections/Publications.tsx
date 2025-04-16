@@ -1,9 +1,9 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Calendar, ExternalLink, Info } from "lucide-react";
+import { BookOpen, Calendar, ExternalLink, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useState } from "react";
 
 const Publications = () => {
   const publications = [
@@ -33,6 +33,21 @@ const Publications = () => {
     }
   ];
 
+  const [expandedAbstracts, setExpandedAbstracts] = useState<number[]>([]);
+
+  const toggleAbstract = (index: number) => {
+    setExpandedAbstracts(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const isAbstractLong = (text: string) => {
+    const words = text.split(' ');
+    return words.length > 40; // Approximately 2 lines of text
+  };
+
   return (
     <section id="publications" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -42,9 +57,13 @@ const Publications = () => {
           centered={true}
         />
         
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {publications.map((publication, index) => (
-            <Card key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card 
+              key={index} 
+              className="animate-fade-up bg-card hover:bg-accent/5 transition-colors" 
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <CardHeader>
                 <CardTitle className="text-xl">{publication.title}</CardTitle>
                 <CardDescription className="flex flex-wrap items-center gap-2 mt-1">
@@ -61,7 +80,28 @@ const Publications = () => {
               </CardHeader>
               
               <CardContent>
-                <p className="text-sm text-muted-foreground">{publication.abstract}</p>
+                <div className="relative">
+                  <p className="text-sm text-muted-foreground">
+                    {isAbstractLong(publication.abstract) && !expandedAbstracts.includes(index)
+                      ? `${publication.abstract.split(' ').slice(0, 40).join(' ')}...`
+                      : publication.abstract
+                    }
+                  </p>
+                  {isAbstractLong(publication.abstract) && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="mt-2 text-primary hover:text-primary/80"
+                      onClick={() => toggleAbstract(index)}
+                    >
+                      {expandedAbstracts.includes(index) ? (
+                        <>Show Less <ChevronUp className="ml-1 h-4 w-4" /></>
+                      ) : (
+                        <>Read More <ChevronDown className="ml-1 h-4 w-4" /></>
+                      )}
+                    </Button>
+                  )}
+                </div>
               </CardContent>
               
               <CardFooter>
@@ -98,7 +138,7 @@ const Publications = () => {
         </div>
         
         <div className="text-center mt-10">
-        <Button asChild variant="outline" size="lg" className="bg-card text-card-foreground border-2 border-primary/20 dark:border-primary/30 hover:border-primary/20 hover:bg-accent/80 shadow-sm dark:shadow-primary/">
+          <Button asChild variant="outline" size="lg" className="bg-card text-card-foreground border-2 border-primary/20 dark:border-primary/30 hover:border-primary/20 hover:bg-accent/80 shadow-sm dark:shadow-primary/">
             <a 
               href="https://scholar.google.com/citations?user=_-ClV0AAAAAJ" 
               target="_blank" 
