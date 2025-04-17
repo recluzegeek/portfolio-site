@@ -1,16 +1,29 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Briefcase, GraduationCap, Award } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Award, ChevronDown, ChevronUp } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { useState } from "react";
 
 const Resume = () => {
+  // State for expanded items in experience section
+  const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
+
+  const toggleExperienceExpand = (index: number) => {
+    setExpandedExperiences(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index) 
+        : [...prev, index]
+    );
+  };
+  
   const education = [
     {
       degree: "Bachelor of Science in Software Engineering",
       institution: "GIFT University",
       location: "Gujranwala, Pakistan",
       period: "2021 - 2025",
-      description: "Graduated with Gold Medal and 3.85 CGPA. Focused on software engineering principles, algorithms, and artificial intelligence."
+      description: "Graduated with Gold Medal and 3.85 CGPA. Focused on software engineering principles, algorithms, and computer vision."
     }
   ];
 
@@ -125,11 +138,41 @@ const Resume = () => {
                       </span>
                     </div>
                     {Array.isArray(item.description) ? (
-                      <ul className="list-disc list-inside space-y-2 text-sm">
-                        {item.description.map((bullet, idx) => (
-                          <li key={idx}>{bullet}</li>
-                        ))}
-                      </ul>
+                      <div className="text-sm">
+                        {item.description.length > 2 ? (
+                          <>
+                            <ul className="list-disc list-inside space-y-2">
+                              {(expandedExperiences.includes(index) ? item.description : item.description.slice(0, 2)).map((bullet, idx) => (
+                                <li key={idx}>{bullet}</li>
+                              ))}
+                            </ul>
+                            {item.description.length > 2 && (
+                              <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                className="mt-2 text-primary flex items-center"
+                                onClick={() => toggleExperienceExpand(index)}
+                              >
+                                {expandedExperiences.includes(index) ? (
+                                  <>
+                                    Show Less <ChevronUp className="ml-1 h-4 w-4" />
+                                  </>
+                                ) : (
+                                  <>
+                                    Read More <ChevronDown className="ml-1 h-4 w-4" />
+                                  </>
+                                )}
+                              </Button>
+                            )}
+                          </>
+                        ) : (
+                          <ul className="list-disc list-inside space-y-2">
+                            {item.description.map((bullet, idx) => (
+                              <li key={idx}>{bullet}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     ) : (
                       <p className="text-sm">{item.description}</p>
                     )}

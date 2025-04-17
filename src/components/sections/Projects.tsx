@@ -1,11 +1,12 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Info } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useQuery } from "@tanstack/react-query";
 import { fetchOgImage } from "@/utils/fetchOgImage";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const Projects = () => {
   const projects = [
@@ -100,7 +101,7 @@ const Projects = () => {
               className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 animate-fade-up shadow-md" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative bg-muted flex items-center justify-center overflow-hidden">
+              <div className="relative bg-muted flex items-center justify-center overflow-hidden h-48">
                 <img 
                   src={ project.image || ogImageResults[index].data} 
                   alt={project.title}
@@ -155,20 +156,21 @@ const Projects = () => {
                     </a>
                   </Button>
                 ) : (
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button size="sm" variant="secondary" className="inline-flex items-center">
-                          <Info className="mr-2 h-4 w-4" />
-                          Run Locally
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent className="max-w-xs">
-                        <p>This project needs to be run locally.</p>
-                        <p> Check the README file in the GitHub repository for setup instructions.</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button size="sm" variant="secondary" className="inline-flex items-center">
+                        <Info className="mr-2 h-4 w-4" />
+                        Run Locally
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-80 p-4">
+                      <div className="space-y-2">
+                        <h4 className="font-medium">Local Setup Required</h4>
+                        <p className="text-sm">This project needs to be run locally.</p>
+                        <p className="text-sm">Check the README file in the GitHub repository for complete setup instructions.</p>
+                      </div>
+                    </PopoverContent>
+                  </Popover>
                 )}
               </CardFooter>
             </Card>
@@ -185,7 +187,7 @@ const Projects = () => {
             >
               <Github className="mr-2 h-4 w-4" />
               View More on GitHub
-              <ExternalLink className="mr-2 h-4 w-4" />
+              <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
         </div>
