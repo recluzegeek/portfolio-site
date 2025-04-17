@@ -1,200 +1,116 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
-import { Github, Linkedin, Mail, MessageSquare, Send } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, MessageSquare, MapPin, ExternalLink } from "lucide-react";
 
 const ContactInfo = () => (
   <div className="space-y-8 h-full">
     <div>
       <SectionHeading 
         title="Get In Touch" 
-        centered={false}
+        description="I'm open to new opportunities, collaborations, or discussions on software engineering, computer vision, and AI."
+        centered={true}
       />
-      <p className="text-base text-muted-foreground mb-8 max-w-md">
-        I'm open to new opportunities, collaborations, or discussions on software engineering, 
-        computer vision, and AI. Feel free to reach out!
-      </p>
     </div>
     
-    <div className="space-y-6">
-      <Card>
-        <CardContent className="p-4 flex items-center">
-          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-            <Mail className="h-5 w-5 text-primary" />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <Card className="hover-lift transition-all duration-300">
+        <CardContent className="p-6 flex items-center">
+          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-5">
+            <Mail className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <p className="text-sm font-medium">Email</p>
-            <a href="mailto:recluzegeek@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <p className="text-base font-medium mb-1">Email</p>
+            <a 
+              href="mailto:recluzegeek@gmail.com" 
+              className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center"
+            >
               recluzegeek@gmail.com
+              <ExternalLink className="ml-1 h-3 w-3" />
             </a>
           </div>
         </CardContent>
       </Card>
       
-      <Card>
-        <CardContent className="p-4 flex items-center">
-          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-            <Github className="h-5 w-5 text-primary" />
+      <Card className="hover-lift transition-all duration-300">
+        <CardContent className="p-6 flex items-center">
+          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-5">
+            <Github className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <p className="text-sm font-medium">GitHub</p>
+            <p className="text-base font-medium mb-1">GitHub</p>
             <a 
               href="https://github.com/recluzegeek" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center"
             >
               github.com/recluzegeek
+              <ExternalLink className="ml-1 h-3 w-3" />
             </a>
           </div>
         </CardContent>
       </Card>
       
-      <Card>
-        <CardContent className="p-4 flex items-center">
-          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-            <Linkedin className="h-5 w-5 text-primary" />
+      <Card className="hover-lift transition-all duration-300">
+        <CardContent className="p-6 flex items-center">
+          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-5">
+            <Linkedin className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <p className="text-sm font-medium">LinkedIn</p>
+            <p className="text-base font-medium mb-1">LinkedIn</p>
             <a 
-              href="https://linkedin.com/recluzegeek" 
+              href="https://linkedin.com/in/recluzegeek" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center"
             >
               linkedin.com/in/recluzegeek
+              <ExternalLink className="ml-1 h-3 w-3" />
             </a>
           </div>
         </CardContent>
       </Card>
       
-      <Card>
-        <CardContent className="p-4 flex items-center">
-          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-            <MessageSquare className="h-5 w-5 text-primary" />
+      <Card className="hover-lift transition-all duration-300">
+        <CardContent className="p-6 flex items-center">
+          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-5">
+            <MessageSquare className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <p className="text-sm font-medium">Response Time</p>
+            <p className="text-base font-medium mb-1">Response Time</p>
             <p className="text-sm text-muted-foreground">Usually within 24-48 hours</p>
           </div>
         </CardContent>
       </Card>
     </div>
+
+    <div className="text-center mt-10 pt-6">
+      <p className="text-muted-foreground mb-6">Let's connect and discuss how we can work together!</p>
+      <div className="flex justify-center space-x-4">
+        <Button variant="outline" size="lg" className="rounded-full" asChild>
+          <a href="mailto:recluzegeek@gmail.com">
+            <Mail className="mr-2 h-4 w-4" />
+            Email Me
+          </a>
+        </Button>
+        <Button variant="outline" size="lg" className="rounded-full" asChild>
+          <a href="https://linkedin.com/in/recluzegeek" target="_blank" rel="noopener noreferrer">
+            <Linkedin className="mr-2 h-4 w-4" />
+            Connect
+          </a>
+        </Button>
+      </div>
+    </div>
   </div>
 );
-
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full"
-        />
-      </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="your.email@example.com"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full"
-        />
-      </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          name="message"
-          placeholder="Your message..."
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="w-full min-h-32"
-        />
-      </div>
-      
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? (
-          <>Processing...</>
-        ) : (
-          <>
-            <Send className="mr-2 h-4 w-4" />
-            Send Message
-          </>
-        )}
-      </Button>
-    </form>
-  );
-};
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-10">
-          <div className="w-full lg:w-1/2 animate-fade-up">
-            <ContactInfo />
-          </div>
-          
-          <div className="w-full lg:w-1/2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <Card>
-              <CardContent className="p-6 md:p-8">
-                <h3 className="text-2xl font-heading font-medium mb-6">Send a Message</h3>
-                <ContactForm />
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        <ContactInfo />
       </div>
     </section>
   );
