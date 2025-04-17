@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Briefcase, GraduationCap, Award, ChevronDown, ChevronUp } from "lucide-react";
@@ -77,7 +76,7 @@ const Resume = () => {
           centered={true}
         />
         <div className="text-center mb-12">
-          <Button asChild className="hover-lift">
+        <Button asChild size="lg" variant="default" className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white">
             <a href="lovable-uploads/cc2bd8f09bb88b5dd20f9b432631b8ca.pdf" download className="inline-flex items-center">
               <Download className="mr-2 h-4 w-4" />
               Download Resume (PDF)
@@ -106,7 +105,7 @@ const Resume = () => {
                         <h4 className="text-xl font-medium">{item.degree}</h4>
                         <p className="text-muted-foreground">{item.institution}, {item.location}</p>
                       </div>
-                      <span className="mt-2 md:mt-0 inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                      <span className="mt-2 md:mt-0 self-start inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm whitespace-nowrap max-w-full">
                         {item.period}
                       </span>
                     </div>
@@ -133,7 +132,7 @@ const Resume = () => {
                         <h4 className="text-xl font-medium">{item.position}</h4>
                         <p className="text-muted-foreground">{item.company}, {item.location}</p>
                       </div>
-                      <span className="mt-2 md:mt-0 inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                      <span className="mt-2 md:mt-0 self-start inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm whitespace-nowrap max-w-full">
                         {item.period}
                       </span>
                     </div>
@@ -196,7 +195,7 @@ const Resume = () => {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <h4 className="text-lg font-medium">{item.title}</h4>
-                    <span className="inline-block px-3 py-1 bg-accent/20 text-accent-foreground rounded-full text-xs">
+                    <span className="self-start inline-block px-3 py-1 bg-accent/20 text-accent-foreground rounded-full text-xs whitespace-nowrap max-w-full">
                       {item.date}
                     </span>
                   </div>

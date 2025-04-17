@@ -101,7 +101,7 @@ const Projects = () => {
               className="hover-lift overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 animate-fade-up shadow-md" 
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative bg-muted flex items-center justify-center overflow-hidden h-48">
+              <div className="relative bg-muted flex items-center justify-center overflow-hidden">
                 <img 
                   src={ project.image || ogImageResults[index].data} 
                   alt={project.title}
@@ -178,7 +178,7 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-10">
-        <Button asChild size="lg" className="bg-sky-400 hover:bg-sky-500 text-white">
+        <Button asChild size="lg" variant="default" className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white">
         <a 
               href="https://github.com/recluzegeek" 
               target="_blank" 
