@@ -77,7 +77,7 @@ const Resume = () => {
         />
         <div className="text-center mb-12">
         <Button asChild size="lg" variant="default" className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white">
-            <a href="lovable-uploads/cc2bd8f09bb88b5dd20f9b432631b8ca.pdf" download className="inline-flex items-center">
+            <a href="uploads/cc2bd8f09bb88b5dd20f9b432631b8ca.pdf" download className="inline-flex items-center">
               <Download className="mr-2 h-4 w-4" />
               Download Resume (PDF)
             </a>

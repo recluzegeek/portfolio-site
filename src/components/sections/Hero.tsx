@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="mb-10 animate-fade-up">
             <div className="w-48 h-48 rounded-full overflow-hidden mb-8 mx-auto border-4 border-white dark:border-slate-700 shadow-lg">
               <img 
-                src="/lovable-uploads/78b0888d-2956-4867-99b3-0a8419c569a8.png"
+                src="/uploads/78b0888d-2956-4867-99b3-0a8419c569a8.png"
                 alt="Muhammad Salman" 
                 className="w-full h-full object-cover"
               />
