@@ -18,7 +18,7 @@ const Resume = () => {
   
   const education = [
     {
-      degree: "Bachelor of Science in Software Engineering",
+      degree: "Bachelor of Science in Computer Science",
       institution: "GIFT University",
       location: "Gujranwala, Pakistan",
       period: "2021 - 2025",

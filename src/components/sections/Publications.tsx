@@ -19,7 +19,7 @@ const Publications = () => {
       title: "Analyzing Frequency Domain Features and Machine Learning Approaches for Deepfake Detection",
       venue: "IEEE Access",
       date: "April 2025",
-      abstract: "This study investigates the use of machine learning classifiers with mathematical transformations as frequency-domain feature extractors for efficient deepfake detection. Unlike traditional computationally intensive methods, our approach leverages Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), and Wavelet Transform (both individually and in combinations) as feature extractors. These features are processed with machine learning classifiers, enabling quicker and more scalable detection without the heavy computational cost of traditional methods, leading to both speed and increased generalization, making it a promising solution for real-time, large-scale deepfake detection.",
+      abstract: "This study explores using machine learning classifiers with frequency-domain feature extraction methods like Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Wavelet Transform, and their permutations as well for deepfake detection. Unlike traditional methods that are computationally heavy, our approach uses these transforms to extract features, which are then processed by machine learning classifiers. This results in faster, more scalable detection with lower computational costs, making it ideal for real-time, large-scale deepfake detection.",
       link: null,
       status: "Under Review"
     },
@@ -27,7 +27,7 @@ const Publications = () => {
       title: "Convolutional Neural Networks and Transformer-Based Deepfake Detection: A Comparative Analysis",
       venue: "Not Yet Decided",
       date: "Expected July 2025",
-      abstract: "This study evaluates various transfer learning approaches applied to medical image classification tasks. We analyze performance across different medical imaging modalities including X-rays, MRIs, and CT scans, and propose optimization strategies that improve diagnostic accuracy by up to 12% while reducing annotation requirements by 35%.",
+      abstract: "This study compares Convolutional Neural Networks (CNNs) and Transformer-based models for detecting deepfakes. The results show that both approaches perform well, but Transformers offer better accuracy and generalization. We also suggest optimization strategies to improve detection efficiency and reduce computational costs, making deepfake detection more reliable in real-world scenarios.",
       link: null,
       status: "Final Stages"
     }
