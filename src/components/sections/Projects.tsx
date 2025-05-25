@@ -19,6 +19,14 @@ const Projects = () => {
       deployed: false
     },
     {
+      title: "AWARE-NET: Adaptive Weighted Averaging for Robust Ensemble Network in Deepfake Detection",
+      description: " A two-tier PyTorch-based ensemble model combining Xception, Res2Net101, and EfficientNet-B7. It adaptively learns optimal weights to improve generalization across datasets.",
+      technologies: ["PyTorch", "Computer Vision", "Research Article"],
+      image: "https://opengraph.githubassets.com/71c1dc30489c8fbc3d0d8296303d69b7bf11c704ca1d217d6b1eff1a1d0baad6/recluzegeek/AWARE-NET",
+      githubUrl: "https://github.com/recluzegeek/AWARE-NET",
+      deployed: false
+    },
+    {
       title: "DeepScan Web",
       description: "A comprehensive web application leveraging deep learning algorithms to detect potential deepfake video content, providing robust authentication and user management features.",
       technologies: ["Laravel", "PHP", "Deep Learning", "MariaDB", "Vue.js", "MinIO", "Redis"],

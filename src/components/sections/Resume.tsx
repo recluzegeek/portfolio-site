@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Briefcase, GraduationCap, Award, ChevronDown, ChevronUp } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Award, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { useState } from "react";
 
@@ -54,16 +54,28 @@ const Resume = () => {
 
   const certifications = [
     {
-      title: "Deep Learning Specialization",
-      issuer: "Coursera",
-      date: "2024",
-      description: "Comprehensive program covering neural networks, improving deep neural networks, structuring machine learning projects, CNNs, and sequence models."
+      title: "Practical Computer Vision with PyTorch",
+      issuer: "Hasso Plattner Institute",
+      date: "2025",
+      credential_id: "ximit-zidyb-bucen-rivep-defyf",
+      credential_url: "https://open.hpi.de/verify/ximit-zidyb-bucen-rivep-defyf",
+      description: "Covered core CV topics including CNNs, Transformers, Mask R-CNN, CLIP, and diffusion models. Hands-on training with PyTorch, data augmentation, transfer learning, and tools like Weights & Biases and FiftyOne."
     },
     {
-      title: "Linux Foundation Certified System Administrator (LFCS)",
-      issuer: "Linux Foundation",
-      date: "2023",
-      description: "Professional certification demonstrating proficiency in administering Linux servers, covering system installation, user management, networking, and security to ensure efficient and secure Linux-based environments."
+      title: "AI Agents Fundamentals",
+      issuer: "Huggingface",
+      date: "2025",
+      credential_id: "recluzegeek",
+      credential_url: "https://huggingface.co/datasets/agents-course/certificates/resolve/main/certificates/recluzegeek/2025-05-20.png",
+      description: "Introductory course on building and deploying autonomous AI agents using modern agentic frameworks like Smolagents, LangGraph, and LlamaIndex."
+    },
+    {
+      title: "Continuous Delivery and GitOps using ArgoCD",
+      issuer: "Akuity - The GitOps Platform for Kubernetes",
+      date: "2025",
+      credential_id: "c99dbce0-04d2-40a8-9bdf-1b674c551582  ",
+      credential_url: "https://www.credential.net/c99dbce0-04d2-40a8-9bdf-1b674c551582",
+      description: "Practical certification covering GitOps principles, ArgoCD workflows, continuous delivery pipelines, and Kubernetes-native deployments."
     }
   ];
 
@@ -191,16 +203,44 @@ const Resume = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {certifications.map((item, index) => (
-              <Card key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card 
+                key={index} 
+                className="animate-fade-up" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-3">
+                  <div className="flex justify-between items-start mb-4">
                     <h4 className="text-lg font-medium">{item.title}</h4>
-                    <span className="self-start inline-block px-3 py-1 bg-accent/20 text-accent-foreground rounded-full text-xs whitespace-nowrap max-w-full">
-                      {item.date}
-                    </span>
+                      <div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-white hover:text-white transition-all duration-300 group/btn"
+                        asChild
+                      >
+                        <a 
+                          href={item.credential_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2"
+                        >
+                          View Credential
+                          <ExternalLink className="h-3 w-3 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">Issued by: {item.issuer}</p>
-                  <p className="text-sm">{item.description}</p>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground flex items-center gap-2">
+                      <span className="font-medium min-w-20">Issued by:</span> 
+                      <span className="text-foreground">{item.issuer}</span>
+                    </p>
+                    <p className="text-sm text-muted-foreground flex items-center gap-2">
+                      <span className="font-medium min-w-20">Credential ID:</span>
+                      <span className="text-foreground font-mono text-xs">{item.credential_id}</span>
+                    </p>
+                    <p className="text-sm border-t border-border/50 pt-3 mt-3">{item.description}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
